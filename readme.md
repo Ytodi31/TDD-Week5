@@ -5,12 +5,9 @@
 
 ---
 
-## Overview
-
-Simple starter C++ project with:
-
-- cmake
-- googletest
+## Authors
+-- Yashaarth Todi [Driver]
+-- Raja Iskala [Navigator]
 
 ## Standard install via command-line
 ```
