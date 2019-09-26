@@ -1,6 +1,8 @@
 # C++ Boilerplate
+
 [![Build Status](https://travis-ci.org/Ytodi31/TDD-Week5.svg?branch=master)](https://travis-ci.org/YTodi31/TDD-Week5)
-[![Coverage Status](https://coveralls.io/repos/github/Ytodi31/TDD-Week5/badge.svg?branch=class-design)](https://coveralls.io/github/Ytodi31/TDD-Week5?branch=class-design)
+[![Coverage Status](https://coveralls.io/repos/github/dpiet/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/dpiet/cpp-boilerplate?branch=master)
+
 ---
 
 ## Overview
