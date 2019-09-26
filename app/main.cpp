@@ -1,8 +1,8 @@
 #include <iostream>
+#include "PIDController.h"
 
 
 int main()
 {
-    dummy();
     return 0;
 }
