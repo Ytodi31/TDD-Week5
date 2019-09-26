@@ -38,7 +38,7 @@ class PIDController {
   void setKp(double);
 
   /**
-    * @brief Setter for private member kd - Differential gain
+    * @brief Setter for private member kd -Differential gain
     * @param type double holding value of kd
     * @return none
     */
@@ -51,21 +51,44 @@ class PIDController {
     */
   void setKi(double);
 
+  /**
+     * @brief Getter for private member kp - Proportional gain
+     * @param none
+     * @return type double, containing proportional gain
+     */
+  double getKp();
+
+  /**
+     * @brief Getter for private member kd - Differential gain
+     * @param none
+     * @return type double, containing differential gain
+     */
+  double getKd();
+
+  /**
+     * @brief Getter for private member ki - Integral gain
+     * @param none
+     * @return type double, containing integral gain
+     */
+  double getKi();
+
+
  private:
+
   /**
    * @brief kp_ a variable of type double to store Proportional gain
    */
-  double kp_;
+  double kp_=100;
 
   /**
    * @brief ki_ a variable of type double to store Integral gain
    */
-  double ki_;
+  double ki_=100;
 
   /**
    * @brief kd_ a variable of type double to store Differential gain
    */
-  double kd_;
+  double kd_=100;
 };
 
 #endif /* INCLUDE_PIDCONTROLLER_H_ */

@@ -17,7 +17,6 @@
 
 PIDController::PIDController() {
   // TODO Auto-generated constructor stub
-
 }
 
 PIDController::~PIDController() {
@@ -43,7 +42,7 @@ double PIDController::ComputeVelocity(double setPoint, double actualVelocity) {
  * @return none
  */
 void PIDController::setKp(double kp) {
-  PIDController::kp_ = kp;
+  kp_ = kp;
 }
 
 /**
@@ -52,7 +51,7 @@ void PIDController::setKp(double kp) {
  * @return none
  */
 void PIDController::setKd(double kd) {
-  PIDController::kd_ = kd;
+  kd_ = kd;
 }
 
 /**
@@ -61,7 +60,33 @@ void PIDController::setKd(double kd) {
  * @return none
  */
 void PIDController::setKi(double ki) {
-  PIDController::ki_ = ki;
+  ki_ = ki;
 }
 
+/**
+ * @brief Getter for private member kp
+ * @param none
+ * @return type double, value of proportional gain
+ */
+double PIDController::getKp() {
+  return kp_;
+}
+
+/**
+ * @brief Getter for private member kd
+ * @param none
+ * @return type double, value of differential gain
+ */
+double PIDController::getKd() {
+  return kd_;
+}
+
+/**
+ * @brief Getter for private member ki
+ * @param none
+ * @return type double, value of integral gain
+ */
+double PIDController::getKi() {
+  return ki_;
+}
 
