@@ -6,8 +6,8 @@
 ---
 
 ## Authors
--- Yashaarth Todi [Driver]
--- Raja Iskala [Navigator]
+Yashaarth Todi [Driver]
+Raja Iskala [Navigator]
 
 ## Standard install via command-line
 ```
