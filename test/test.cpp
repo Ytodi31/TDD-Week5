@@ -17,7 +17,6 @@
 
 #include "PIDController.h"
 
-
 /**
  * @brief This test checks if controller has achieved set target
  */
@@ -31,7 +30,7 @@ TEST(PIDControllerTest, testPIDControllerComputeMethod) {
 /**
  * @brief This test checks if PID Controller parameters are appropriate
  */
-TEST (PIDTuningTest, testPIDParameters) {
+TEST(PIDTuningTest, testPIDParameters) {
   PIDController controller;
   ASSERT_EQ(0.5, controller.getKp());
   ASSERT_EQ(0.2, controller.getKd());

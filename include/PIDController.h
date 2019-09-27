@@ -22,73 +22,71 @@ class PIDController {
   ~PIDController();
 
   /**
-    * @brief ComputeVelocity, computes new velocity given a target setpoint and
-    * current velocity
-    * @param targetSetpoint, variable of type double holding target velocity
-    * @param currentVelocity, variable of type double folding current velocity
-    * @return double type, new velocity
-    */
+   * @brief ComputeVelocity, computes new velocity given a target setpoint and
+   * current velocity
+   * @param targetSetpoint, variable of type double holding target velocity
+   * @param currentVelocity, variable of type double folding current velocity
+   * @return double type, new velocity
+   */
   double ComputeVelocity(double targetSetpoint, double currentVelocity);
 
   /**
-    * @brief Setter for private member kp - Proportional gain
-    * @param type double holding value of kp
-    * @return none
-    */
+   * @brief Setter for private member kp - Proportional gain
+   * @param type double holding value of kp
+   * @return none
+   */
   void setKp(double);
 
   /**
-    * @brief Setter for private member kd -Differential gain
-    * @param type double holding value of kd
-    * @return none
-    */
+   * @brief Setter for private member kd -Differential gain
+   * @param type double holding value of kd
+   * @return none
+   */
   void setKd(double);
 
   /**
-    * @brief Setter for private member ki - Integral gain
-    * @param type double holding value of ki
-    * @return none
-    */
+   * @brief Setter for private member ki - Integral gain
+   * @param type double holding value of ki
+   * @return none
+   */
   void setKi(double);
 
   /**
-     * @brief Getter for private member kp - Proportional gain
-     * @param none
-     * @return type double, containing proportional gain
-     */
+   * @brief Getter for private member kp - Proportional gain
+   * @param none
+   * @return type double, containing proportional gain
+   */
   double getKp();
 
   /**
-     * @brief Getter for private member kd - Differential gain
-     * @param none
-     * @return type double, containing differential gain
-     */
+   * @brief Getter for private member kd - Differential gain
+   * @param none
+   * @return type double, containing differential gain
+   */
   double getKd();
 
   /**
-     * @brief Getter for private member ki - Integral gain
-     * @param none
-     * @return type double, containing integral gain
-     */
+   * @brief Getter for private member ki - Integral gain
+   * @param none
+   * @return type double, containing integral gain
+   */
   double getKi();
 
-
  private:
-
   /**
    * @brief kp_ a variable of type double to store Proportional gain
    */
-  double kp_=100;
+  double kp_ = 100;
 
   /**
    * @brief ki_ a variable of type double to store Integral gain
    */
-  double ki_=100;
+  double ki_ = 100;
 
   /**
    * @brief kd_ a variable of type double to store Differential gain
    */
-  double kd_=100;
+  double kd_ = 100;
 };
 
 #endif /* INCLUDE_PIDCONTROLLER_H_ */

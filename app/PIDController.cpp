@@ -16,11 +16,9 @@
 #include <PIDController.h>
 
 PIDController::PIDController() {
-  // TODO Auto-generated constructor stub
 }
 
 PIDController::~PIDController() {
-  // TODO Auto-generated destructor stub
 }
 
 /**
@@ -31,8 +29,7 @@ PIDController::~PIDController() {
  * @return auto type, new velocity
  */
 double PIDController::ComputeVelocity(double setPoint, double actualVelocity) {
-
-  //stub implementation
+  // stub implementation
   return 100;
 }
 
