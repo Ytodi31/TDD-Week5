@@ -1,8 +1,7 @@
 # C++ Boilerplate
 
 [![Build Status](https://travis-ci.org/Ytodi31/TDD-Week5.svg?branch=master)](https://travis-ci.org/YTodi31/TDD-Week5)
-[![Coverage Status](https://coveralls.io/repos/github/YTodi31/TDD-Week5/badge.svg?branch=master)](https://coveralls.io/github/YTodi31/TDD-Week5?branch=master)
-
+[![Coverage Status](https://coveralls.io/repos/github/Ytodi31/TDD-Week5/badge.svg?branch=master)](https://coveralls.io/github/Ytodi31/TDD-Week5?branch=master)
 ---
 
 ## Authors
