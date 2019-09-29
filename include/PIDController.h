@@ -31,25 +31,19 @@ class PIDController {
   double ComputeVelocity(double targetSetpoint, double currentVelocity);
 
   /**
-   * @brief Setter for private member kp - Proportional gain
-   * @param type double holding value of kp
-   * @return none
+   * @brief StepFeedback, computes the feedback velocity to be added to current
+   * velocity
+   * @param currentError of type double, is the current error of the velocity
+   * @param previousError of type double, is the previous error of the velocity
+   * @return double type, feedback
    */
-  void setKp(double);
+  double StepFeedback(double currentError, double previousError);
 
   /**
-   * @brief Setter for private member kd -Differential gain
-   * @param type double holding value of kd
-   * @return none
+   * @brief kp_ a variable of type double to store sum of errors
+   * until target velocity is acheived
    */
-  void setKd(double);
-
-  /**
-   * @brief Setter for private member ki - Integral gain
-   * @param type double holding value of ki
-   * @return none
-   */
-  void setKi(double);
+  double sumError;
 
   /**
    * @brief Getter for private member kp - Proportional gain
@@ -76,17 +70,17 @@ class PIDController {
   /**
    * @brief kp_ a variable of type double to store Proportional gain
    */
-  double kp_ = 100;
+  double kp_ = 0.5;
 
   /**
    * @brief ki_ a variable of type double to store Integral gain
    */
-  double ki_ = 100;
+  double ki_ = 0.1;
 
   /**
    * @brief kd_ a variable of type double to store Differential gain
    */
-  double kd_ = 100;
+  double kd_ = 0.2;
 };
 
 #endif /* INCLUDE_PIDCONTROLLER_H_ */

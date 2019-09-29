@@ -15,7 +15,10 @@
 
 #include <PIDController.h>
 
+#include <stdlib.h>
+
 PIDController::PIDController() {
+  sumError = 0;
 }
 
 PIDController::~PIDController() {
@@ -23,7 +26,7 @@ PIDController::~PIDController() {
 
 /**
  * @brief ComputeVelocity function computes the new velocity for a PID
- * Controller.
+ * Controller until target reached
  * @param setPoint of type double,
  * @param actualVelocity of type double,
  * @return auto type, new velocity
@@ -34,30 +37,17 @@ double PIDController::ComputeVelocity(double setPoint, double actualVelocity) {
 }
 
 /**
- * @brief Sets value of private member proportional gain
- * @param type double, value of proportional gain
- * @return none
+ * @brief StepFeedback function computes the feedback needed to add to the
+ * current velocity to gradually achieve the target velocity
+ * @param currentError of type double, is the difference between current
+ * velocity and target velocity
+ * @param previousError of type double, is the error from the previous feedback
+ * @return feedback of double type, which is the velocity to be added to current
+ * velocity
  */
-void PIDController::setKp(double kp) {
-  kp_ = kp;
-}
-
-/**
- * @brief Sets value of private member differential gain
- * @param type double, value of differential gain
- * @return none
- */
-void PIDController::setKd(double kd) {
-  kd_ = kd;
-}
-
-/**
- * @brief Sets value of private member integral gain
- * @param type double, value of integral gain
- * @return none
- */
-void PIDController::setKi(double ki) {
-  ki_ = ki;
+double PIDController::StepFeedback(double currentError, double previousError) {
+  // stub implementation
+  return -1;
 }
 
 /**
@@ -66,7 +56,8 @@ void PIDController::setKi(double ki) {
  * @return type double, value of proportional gain
  */
 double PIDController::getKp() {
-  return kp_;
+  // stub implementation
+  return 1;
 }
 
 /**
@@ -75,7 +66,8 @@ double PIDController::getKp() {
  * @return type double, value of differential gain
  */
 double PIDController::getKd() {
-  return kd_;
+  // stub implementation
+  return 1;
 }
 
 /**
@@ -84,6 +76,7 @@ double PIDController::getKd() {
  * @return type double, value of integral gain
  */
 double PIDController::getKi() {
-  return ki_;
+  // stub implementation
+  return 1;
 }
 
