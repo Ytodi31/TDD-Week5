@@ -5,8 +5,13 @@
  * @file main.cpp
  * @brief Main file of test.cpp
  *
+ * Part -1
  * @author Yashaarth Todi [Driver]
  * @author Raja Iskala [Navigator]
+ * 
+ * Part -2 
+ * @author Sandeep Kota Sai Pavan [Driver]
+ * @author Raj Prakash Shinde [Navigator]
  *
  * @date 09-25-2019
  */
