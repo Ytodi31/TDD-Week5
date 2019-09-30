@@ -42,7 +42,8 @@ double PIDController::ComputeVelocity(double setPoint, double actualVelocity) {
   double previousError = 0;
   while (abs(currentError) > 1) {
     sumError = sumError + currentError;
-    double feedback = StepFeedback(currentError, previousError);
+    // Calculate step feedback
+    double feedback = StepFeedback(currentError, previousError); 
     actualVelocity = actualVelocity + feedback;
     previousError = currentError;
     currentError = targetVelocity - actualVelocity;
@@ -62,6 +63,7 @@ double PIDController::ComputeVelocity(double setPoint, double actualVelocity) {
 double PIDController::StepFeedback(double currentError, double previousError) {
   int dt = 1;
   double errorDifference = (currentError - previousError)/dt;
+  // Calculate proportional integral defferential feedback 
   double feedback = kp_*currentError + kd_*errorDifference + ki_*sumError*dt;
   return feedback;
 }

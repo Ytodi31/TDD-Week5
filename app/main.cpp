@@ -21,11 +21,18 @@
 #include <iostream>
 #include "PIDController.h"
 
+/*
+* @brief Main function implementation
+*/
 int main() {
 PIDController p;
-std::cout << "Check implementation of the ComputeVelocity(10,15) method:"
-          << p.ComputeVelocity(10, 15) << std::endl;
-std::cout << "Check implementation of the StepFeedback(5,0) method:"
-          << p.StepFeedback(5, 0) << std::endl;
+std::cout << "Check implementation of the ComputeVelocity(5,10) method:"
+          << p.ComputeVelocity(5, 10) << std::endl;
+std::cout << "Check implementation of the getKp() method should return 0.5: "
+          << p.getKp() << std::endl;
+std::cout << "Check implementation of the getKi() method should return 0.1: "
+          << p.getKi() << std::endl;
+std::cout << "Check implementation of the getKd) method should return 0.2: "
+          << p.getKd() << std::endl;
 return 0;
 }
