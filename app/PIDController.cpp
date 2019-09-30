@@ -7,8 +7,13 @@
  *
  * It contains the function definition to compute the new velocity of PID
  *
+ * Part - 1
  * @author Yashaarth Todi [Driver]
  * @author Raja Iskala [Navigator]
+ * 
+ * Part -2 
+ * @author Sandeep Kota Sai Pavan [Driver]
+ * @author Raj Prakash Shinde [Navigator]
  *
  * @date 09-25-2019
  */
@@ -32,8 +37,17 @@ PIDController::~PIDController() {
  * @return auto type, new velocity
  */
 double PIDController::ComputeVelocity(double setPoint, double actualVelocity) {
-  // stub implementation
-  return 100;
+  double targetVelocity = actualVelocity;
+  double currentError = setPoint - actualVelocity;
+  double previousError = 0;
+  while (abs(currentError) > 1) {
+    sumError = sumError + currentError;
+    double feedback = StepFeedback(currentError, previousError);
+    actualVelocity = actualVelocity + feedback;
+    previousError = currentError;
+    currentError = targetVelocity - actualVelocity;
+  }
+  return actualVelocity;
 }
 
 /**
@@ -46,8 +60,10 @@ double PIDController::ComputeVelocity(double setPoint, double actualVelocity) {
  * velocity
  */
 double PIDController::StepFeedback(double currentError, double previousError) {
-  // stub implementation
-  return -1;
+  int dt = 1;
+  double errorDifference = (currentError - previousError)/dt;
+  double feedback = kp_*currentError + kd_*errorDifference + ki_*sumError*dt;
+  return feedback;
 }
 
 /**
@@ -56,8 +72,7 @@ double PIDController::StepFeedback(double currentError, double previousError) {
  * @return type double, value of proportional gain
  */
 double PIDController::getKp() {
-  // stub implementation
-  return 1;
+  return kp_;
 }
 
 /**
@@ -66,8 +81,7 @@ double PIDController::getKp() {
  * @return type double, value of differential gain
  */
 double PIDController::getKd() {
-  // stub implementation
-  return 1;
+  return kd_;
 }
 
 /**
@@ -76,7 +90,6 @@ double PIDController::getKd() {
  * @return type double, value of integral gain
  */
 double PIDController::getKi() {
-  // stub implementation
-  return 1;
+  return ki_;
 }
 
