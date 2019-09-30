@@ -29,7 +29,10 @@ make
 Run tests: ./test/cpp-test
 Run program: ./app/shell-app
 ```
-
+## Todo List
+Having a discussion with the other pair, the following changes can be made in this repo:
+1) Setters for setting the Kp, Ki, Kd parameters could be implemented.
+2) A method to tune the parameters could also have been implemented.
 
 
 
