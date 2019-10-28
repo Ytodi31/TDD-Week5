@@ -7,60 +7,65 @@
  *
  * It contains the function definition to compute the new velocity of PID
  *
+ * Part - 1
  * @author Yashaarth Todi [Driver]
  * @author Raja Iskala [Navigator]
+ * 
+ * Part -2 
+ * @author Sandeep Kota Sai Pavan [Driver]
+ * @author Raj Prakash Shinde [Navigator]
  *
  * @date 09-25-2019
  */
 
 #include <PIDController.h>
 
+#include <stdlib.h>
+
 PIDController::PIDController() {
-  // TODO Auto-generated constructor stub
+  sumError = 0;
 }
 
 PIDController::~PIDController() {
-  // TODO Auto-generated destructor stub
 }
 
 /**
  * @brief ComputeVelocity function computes the new velocity for a PID
- * Controller.
+ * Controller until target reached
  * @param setPoint of type double,
  * @param actualVelocity of type double,
  * @return auto type, new velocity
  */
 double PIDController::ComputeVelocity(double setPoint, double actualVelocity) {
-
-  //stub implementation
-  return 100;
+  double targetVelocity = actualVelocity;
+  double currentError = setPoint - actualVelocity;
+  double previousError = 0;
+  while (abs(currentError) > 1) {
+    sumError = sumError + currentError;
+    // Calculate step feedback
+    double feedback = StepFeedback(currentError, previousError); 
+    actualVelocity = actualVelocity + feedback;
+    previousError = currentError;
+    currentError = targetVelocity - actualVelocity;
+  }
+  return actualVelocity;
 }
 
 /**
- * @brief Sets value of private member proportional gain
- * @param type double, value of proportional gain
- * @return none
+ * @brief StepFeedback function computes the feedback needed to add to the
+ * current velocity to gradually achieve the target velocity
+ * @param currentError of type double, is the difference between current
+ * velocity and target velocity
+ * @param previousError of type double, is the error from the previous feedback
+ * @return feedback of double type, which is the velocity to be added to current
+ * velocity
  */
-void PIDController::setKp(double kp) {
-  kp_ = kp;
-}
-
-/**
- * @brief Sets value of private member differential gain
- * @param type double, value of differential gain
- * @return none
- */
-void PIDController::setKd(double kd) {
-  kd_ = kd;
-}
-
-/**
- * @brief Sets value of private member integral gain
- * @param type double, value of integral gain
- * @return none
- */
-void PIDController::setKi(double ki) {
-  ki_ = ki;
+double PIDController::StepFeedback(double currentError, double previousError) {
+  int dt = 1;
+  double errorDifference = (currentError - previousError)/dt;
+  // Calculate proportional integral defferential feedback 
+  double feedback = kp_*currentError + kd_*errorDifference + ki_*sumError*dt;
+  return feedback;
 }
 
 /**

@@ -7,16 +7,20 @@
  *
  * It contains the function definition to compute the new velocity of PID
  *
+ * Part - 1
  * @author Yashaarth Todi [Driver]
  * @author Raja Iskala [Navigator]
  *
+ * Part -2 
+ * @author Sandeep Kota Sai Pavan [Driver]
+ * @author Raj Prakash Shinde [Navigator]
+ * 
  * @date 09-25-2019
  */
 
 #include <gtest/gtest.h>
 
 #include "PIDController.h"
-
 
 /**
  * @brief This test checks if controller has achieved set target
@@ -29,11 +33,26 @@ TEST(PIDControllerTest, testPIDControllerComputeMethod) {
 }
 
 /**
- * @brief This test checks if PID Controller parameters are appropriate
+ * @brief This test if the feedback is positive when the velocity to be achieved is more
+ * than the current velocity
  */
-TEST (PIDTuningTest, testPIDParameters) {
+TEST(PIDFeedbackTest, testPIDFeedbackValue) {
   PIDController controller;
-  ASSERT_EQ(0.5, controller.getKp());
-  ASSERT_EQ(0.2, controller.getKd());
-  ASSERT_EQ(0.1, controller.getKi());
+  double feedback = controller.StepFeedback(5, 0);
+  ASSERT_LT(0, feedback);
 }
+
+/**
+ * @brief This test checks the getters of private members
+ */
+TEST(PIDGetterTest, testKpValue) {
+  PIDController controller;
+  double kp = controller.getKp();
+  ASSERT_EQ(kp, 0.5);
+  double kd = controller.getKd();
+  ASSERT_EQ(kd, 0.2);
+  double ki = controller.getKi();
+  ASSERT_EQ(ki, 0.1);
+}
+
+
