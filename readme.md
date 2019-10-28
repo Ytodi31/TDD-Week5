@@ -1,4 +1,4 @@
-# C++ Boilerplate
+# PID Controller using Pair Programming and Test Driven Development
 [![Build Status](https://travis-ci.org/Ytodi31/TDD-Week5.svg?branch=master)](https://travis-ci.org/YTodi31/TDD-Week5)
 [![Coverage Status](https://coveralls.io/repos/github/Ytodi31/TDD-Week5/badge.svg?branch=master&service=github)](https://coveralls.io/github/Ytodi31/TDD-Week5?branch=master)
 
